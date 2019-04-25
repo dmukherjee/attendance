@@ -6,11 +6,11 @@ function findAbsentAndPresentStudents(attendanceObj) {
 
   Object.keys(attendanceObj).forEach(cohort => {
     for (let i = 0; i < attendanceObj[cohort].length; i += 1) {
-      const stuObj = attendanceObj[cohort][i];
+      const studentObj = attendanceObj[cohort][i];
       if (attendanceObj[cohort][i].absent) {
-        delinquents.push(stuObj);
+        delinquents.push(studentObj);
       } else {
-        present.push(stuObj);
+        present.push(studentObj);
       }
     }
   });

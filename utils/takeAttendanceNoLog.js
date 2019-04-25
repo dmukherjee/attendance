@@ -63,19 +63,19 @@ function sortByCohort(formattedAttendance) {
 
 function formatAttendanceObj(attendanceObj) {
   const attendance = findAbsentAndPresentStudents(attendanceObj);
-  const present = attendance.present.map(stuObj => {
+  const present = attendance.present.map(studentObject => {
     return {
-      name: stuObj.name,
-      cohort: stuObj.cohort,
-      timeJoined: stuObj.timeJoined,
-      absent: stuObj.absent
+      name: studentObject.name,
+      cohort: studentObject.cohort,
+      timeJoined: studentObject.timeJoined,
+      absent: studentObject.absent
     };
   });
-  const absent = attendance.absent.map(stuObj => {
+  const absent = attendance.absent.map(studentObject => {
     return {
-      name: stuObj.name,
-      cohort: stuObj.cohort,
-      absent: stuObj.absent
+      name: studentObject.name,
+      cohort: studentObject.cohort,
+      absent: studentObject.absent
     };
   });
 

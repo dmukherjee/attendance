@@ -28,16 +28,16 @@ function printAttendance(attendanceObj) {
     console.log(determineColor('title'), `--------------------- ${cohort} ---------------------`);
     // iterate across students within cohort
     for (let i = 0; i < attendanceObj[cohort].length; i++) {
-      const stuObj = attendanceObj[cohort][i];
+      const studentObj = attendanceObj[cohort][i];
       if (!attendanceObj[cohort][i].absent) {
-        const printColor = determineColor(stuObj.matchReliability);
-        console.log(printColor, `${stuObj.name}\n matched ${stuObj.match}\n in ${stuObj.room} ✅\n`);
+        const printColor = determineColor(studentObj.matchReliability);
+        console.log(printColor, `${studentObj.name}\n matched ${studentObj.match}\n in ${studentObj.room} ✅\n`);
       } else {
-        const stu = attendanceObj[cohort][i];
+        const student = attendanceObj[cohort][i];
         const len = 49 - (attendanceObj[cohort][i].name.length + 4);
         const buffer = Array(len).join('-');
-        console.log('\x1b[31m', stu.name, `<---${buffer}  ABSENT ❌`);
-        absentStudents.push(stu.name);
+        console.log('\x1b[31m', student.name, `<---${buffer}  ABSENT ❌`);
+        absentStudents.push(student.name);
       }
     }
   }
